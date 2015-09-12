@@ -32,7 +32,7 @@ bool recursive(char *b, char *e, char *bb, char *ee, unsigned lvl) {
 
 int main(void) {
     char s[15], t[15];
-
+//this comment is uselss
     cin >> s;
 
     unsigned l = strlen(s);
