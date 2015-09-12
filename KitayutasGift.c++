@@ -29,10 +29,15 @@ void form_palindrome(char *s) {
     default: {
 
 	bool mismatch = false;
-	char t[15];
+	bool first_match = false; 
+
+        char t[15];
 	char *b = s;
 	char *e = s + l - 1;
-	char *bb = t;
+	if (*e == *b) {
+            first_match = true;
+        }
+        char *bb = t;
 	char *ee = t + l;
 
 	while (e >= b) {
@@ -46,6 +51,19 @@ void form_palindrome(char *s) {
 		cout << "NA" << endl;
 		return;
 
+	    } else if ((*e == *(b+1)) && (first_match)) {
+		
+                *(bb++) = *b; 
+		*(bb++) = *e; 
+		*(bb++) = *(e-1); 
+		*(ee--) = *b;
+		*(ee--) = *e;
+		*(ee--) = *(e-1);
+		e -= 2;
+		b += 3;
+		mismatch = true;
+                first_match = false;
+                
 	    } else if ((*e == *(b+1)) && (*(e-1) == *(b+2))) {
 
 		*(bb++) = *b; 
@@ -57,6 +75,7 @@ void form_palindrome(char *s) {
 		e -= 2;
 		b += 3;
 		mismatch = true;
+                first_match = false;
 
 	    } else if ((*(e-1) == *b) && (*(e-2) == *(b+1))) {
 
@@ -69,6 +88,7 @@ void form_palindrome(char *s) {
 		e -= 3;
 		b += 2;
 		mismatch = true;
+                first_match = false;
 
 	    } else {
 		cout << "NA" << endl;
