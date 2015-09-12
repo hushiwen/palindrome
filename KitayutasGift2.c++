@@ -13,7 +13,6 @@ bool recursive(char *b, char *e, char *bb, char *ee, unsigned lvl) {
     if (e <= b) {
         *bb = *e;
         *ee = *e;
-        return true;
     } else if (lvl > 0) {
         return false;
     } else {
@@ -26,8 +25,9 @@ bool recursive(char *b, char *e, char *bb, char *ee, unsigned lvl) {
         } else {
             return false;
         }
-        return true;
     }
+
+    return true;
 }
 
 int main(void) {
