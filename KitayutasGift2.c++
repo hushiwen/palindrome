@@ -32,18 +32,19 @@ bool recursive(char *b, char *e, char *bb, char *ee, unsigned lvl) {
 
 int main(void) {
     char s[15], t[15];
-//this comment is uselss
-    cin >> s;
 
-    unsigned l = strlen(s);
-    if (l <= 2) {
-        cout << s << *s << endl;
-    } else if (recursive(s, s+l-1, t, t+l, 0)) {
-        t[l+1] = '\0';
-        cout << t << endl;
-    } else {
-        cout << "NA" << endl;
+    while (cin) {
+        cin >> s;
+
+        unsigned l = strlen(s);
+        if (l <= 2) {
+            cout << s << *s << endl;
+        } else if (recursive(s, s+l-1, t, t+l, 0)) {
+            t[l+1] = '\0';
+            cout << t << endl;
+        } else {
+            cout << "NA" << endl;
+        }
     }
-
     return 0;
 }

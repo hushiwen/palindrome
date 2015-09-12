@@ -1,7 +1,7 @@
-CXX        := g++-4.8
+CXX        := g++
 CXXFLAGS   := -pedantic -std=c++11 -Wall
 LDFLAGS    := -lgtest -lgtest_main -pthread
-GCOV       := gcov-4.8
+GCOV       := gcov
 GCOVFLAGS  := -fprofile-arcs -ftest-coverage
 GPROF      := gprof
 GPROFFLAGS := -pg
@@ -12,6 +12,7 @@ clean:
 	rm -f *.gcno
 	rm -f *.gcov
 	rm -f KitayutasGift
+	rm -f test.tmp
 
 config:
 	git config -l
