@@ -33,7 +33,6 @@ int main(void) {
     char s[15], t[15];
 
     while (cin >> s) {
-
         unsigned l = strlen(s);
         if (l <= 2) {
             cout << s << *s << endl;
@@ -44,5 +43,6 @@ int main(void) {
             cout << "NA" << endl;
         }
     }
+
     return 0;
 }
