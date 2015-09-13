@@ -11,8 +11,7 @@ bool recursive(char *b, char *e, char *bb, char *ee, unsigned lvl) {
     }
 
     if (e <= b) {
-        *bb = *e;
-        *ee = *e;
+        *bb = *ee = *e;
     } else if (lvl > 0) {
         return false;
     } else {
